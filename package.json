@@ -15,7 +15,8 @@
   "author": "Segundo Pantoja",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mathjs": "^11.7.0"
   },
   "devDependencies": {
     "jest": "^29.5.0"
