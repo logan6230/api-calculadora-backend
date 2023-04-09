@@ -5,6 +5,7 @@ const evaluate = require('mathjs');
 
 //Crear un objeto que reprsente nuestra aplicacion
 const app = express();
+const PORT = process.env.PORT || 3000
 
 // configurar para que reciva json
 app.use(express.json());
@@ -20,8 +21,8 @@ app.use(function (req, res, next) {
 
 // crear un servidor(servicio para escuchar peticiones http)
 const server = require('http').Server(app);
-app.listen(3000, () => {
-    console.log('Servidor escuchando en http://localhost:3000');
+app.listen(PORT, () => {
+    console.log('Servidor Ok');
 });
 
 // definir los entry points de nuestra aplicacion o rutas donde va responder a las peticiones
