@@ -27,7 +27,7 @@ app.listen(3000, () => {
 // definir los entry points de nuestra aplicacion o rutas donde va responder a las peticiones
 app.post(
     //ruta en la que va a responder
-    '/sumar',
+    '/api/sumar',
     // metodo constructor de la respuesta y peticion
     (req, res) => {
 
@@ -39,7 +39,7 @@ app.post(
     });
 app.post(
     //ruta en la que va a responder
-    '/restar',
+    '/api/restar',
     // metodo constructor de la respuesta y peticion
     (req, res) => {
 
@@ -70,21 +70,14 @@ app.post(
 
 app.post(
     //ruta en la que va a responder
-    '/api/arreglo',
+    '/api/multiplicar',
     // metodo constructor de la respuesta y peticion
     (req, res) => {
-        const { arreglo } = req.body;
+        const { num1, num2 } = req.body;
+        let resultado;
 
-        let resultado = 0;
-        try {
-            arreglo.forEach(num => {
-                console.log(num);
-                resultado += num;
-            });
-            resultado = respuesta;
-            console.log(resultado);
-        } catch (error) {
-            resultado = "No se puede dividir por cero";
-        }
+        resultado = num1 * num2;
+
         res.json(resultado);
     });
+
